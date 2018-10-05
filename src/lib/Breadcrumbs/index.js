@@ -16,7 +16,9 @@ class Breadcrumbs extends React.PureComponent {
   };
 
   static defaultProps = {
+    /** @prop Children nodes to render inside Breadcrumbs | null */
     children: null,
+    /** @prop Optional css class string | '' */
     className: ''
   };
 

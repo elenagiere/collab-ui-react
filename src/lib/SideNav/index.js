@@ -9,7 +9,6 @@ import PropTypes from 'prop-types';
 import { Icon } from '@collab-ui/react';
 
 class SideNav extends React.Component {
-  static displayName = 'SideNav';
 
   state = {
     expanded: this.props.expanded
@@ -48,40 +47,30 @@ class SideNav extends React.Component {
 }
 
 SideNav.propTypes = {
-  /**
-   * Children Nodes to Render inside side navigation
-   */
+  /** @prop Children nodes to Render inside side navigation | null */
   children: PropTypes.node,
-  /**
-   * Title for the side navigation
-   */
-  navSectionTitle: PropTypes.string,
-  /**
-   * Check whether the navigation is the top level
-   */
-  topMenu: PropTypes.bool,
-  /**
-   * Make the navigation expandable
-   */
+  /** @prop Optional CSS class string | '' */
+  className: PropTypes.string,
+  /** @prop Set to make the navigation expandable | false */
   expandable: PropTypes.bool,
-  /**
-   * Set navigation expanded or collapsed
-   */
+  /** @prop Set navigation expanded or collapsed | false */
   expanded: PropTypes.bool,
-   /**
-   * optional customized css class string
-   */
-  className: PropTypes.string
+  /** @prop Title for the side navigation | '' */
+  navSectionTitle: PropTypes.string,
+  /** @prop Sets side navigation as the top level | false */
+  topMenu: PropTypes.bool,
 };
 
 SideNav.defaultProps = {
   children: null,
-  navSectionTitle: '',
-  topMenu: false,
+  className: '',
   expandable: false,
   expanded: false,
-  className: ''
+  navSectionTitle: '',
+  topMenu: false,
 };
+
+SideNav.displayName = 'SideNav';
 
 export default SideNav;
 
