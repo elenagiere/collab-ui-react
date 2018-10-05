@@ -1,3 +1,24 @@
+## [9.7.2](https://github.com/collab-ui/collab-ui-react/compare/v9.7.1...v9.7.2) (2018-10-04)
+
+
+### Bug Fixes
+
+* **TopBar:** remove row class for alignment issues when TopBarNav not present ([e85f0d8](https://github.com/collab-ui/collab-ui-react/commit/e85f0d8))
+
+## [9.7.1](https://github.com/collab-ui/collab-ui-react/compare/v9.7.0...v9.7.1) (2018-10-01)
+
+
+### Bug Fixes
+
+* **Button:** prevent active styles if disabled ([b600814](https://github.com/collab-ui/collab-ui-react/commit/b600814))
+
+# [9.7.0](https://github.com/collab-ui/collab-ui-react/compare/v9.6.0...v9.7.0) (2018-09-26)
+
+
+### Features
+
+* **ContentItem:** add ContentItem component ([98cea7f](https://github.com/collab-ui/collab-ui-react/commit/98cea7f))
+
 # [9.6.0](https://github.com/collab-ui/collab-ui-react/compare/v9.5.0...v9.6.0) (2018-09-19)
 
 
