@@ -55,7 +55,7 @@ class Topbar extends React.Component {
         ? React.cloneElement(
             brandAnchorElement,
             {
-              className: `${cuiBrandClass}` + 
+              className: `${cuiBrandClass}` +
                 `${(brandAnchorElement.props.className && ` ${brandAnchorElement.props.className}`) || ''}`,
             },
             brandNodeChildren
@@ -91,7 +91,7 @@ class Topbar extends React.Component {
         ref={ref => {
           this.parentContainer = ref;
         }}>
-        <div className={`${cuiTopBarClass}__container row`}>
+        <div className={`${cuiTopBarClass}__container`}>
           {brandNode}
           {injectChildren}
         </div>
@@ -134,8 +134,8 @@ Topbar.defaultProps = {
 };
 
 Topbar.childContextTypes = {
-  focus: PropTypes.number,
   activeIndex: PropTypes.number,
+  focus: PropTypes.number,
   onActivate: PropTypes.func,
   onFocus: PropTypes.func,
 };

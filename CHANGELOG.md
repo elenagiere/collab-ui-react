@@ -1,3 +1,44 @@
+# [9.8.0](https://github.com/collab-ui/collab-ui-react/compare/v9.7.3...v9.8.0) (2018-10-12)
+
+
+### Bug Fixes
+
+* **Topbar:** remove row class ([4ea235c](https://github.com/collab-ui/collab-ui-react/commit/4ea235c))
+
+
+### Features
+
+* **contrast:** displaying contrast versions in the docs ([cab36bc](https://github.com/collab-ui/collab-ui-react/commit/cab36bc))
+* **SideNav:** add ability to pass in node for expandable section ([07a2c34](https://github.com/collab-ui/collab-ui-react/commit/07a2c34))
+
+## [9.7.3](https://github.com/collab-ui/collab-ui-react/compare/v9.7.2...v9.7.3) (2018-10-11)
+
+
+### Bug Fixes
+
+* **avatar:** add hover/pressed states when clickable ([cfcfbb9](https://github.com/collab-ui/collab-ui-react/commit/cfcfbb9))
+
+## [9.7.2](https://github.com/collab-ui/collab-ui-react/compare/v9.7.1...v9.7.2) (2018-10-04)
+
+
+### Bug Fixes
+
+* **TopBar:** remove row class for alignment issues when TopBarNav not present ([e85f0d8](https://github.com/collab-ui/collab-ui-react/commit/e85f0d8))
+
+## [9.7.1](https://github.com/collab-ui/collab-ui-react/compare/v9.7.0...v9.7.1) (2018-10-01)
+
+
+### Bug Fixes
+
+* **Button:** prevent active styles if disabled ([b600814](https://github.com/collab-ui/collab-ui-react/commit/b600814))
+
+# [9.7.0](https://github.com/collab-ui/collab-ui-react/compare/v9.6.0...v9.7.0) (2018-09-26)
+
+
+### Features
+
+* **ContentItem:** add ContentItem component ([98cea7f](https://github.com/collab-ui/collab-ui-react/commit/98cea7f))
+
 # [9.6.0](https://github.com/collab-ui/collab-ui-react/compare/v9.5.0...v9.6.0) (2018-09-19)
 
 
