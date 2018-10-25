@@ -14,7 +14,7 @@ import {
 } from 'lodash';
 import iconPaths from '@collab-ui/icons/data/iconsData.json';
 import colors from '@collab-ui/core/data/colors.json';
-import { Button } from '@collab-ui/react';
+// import { Button } from '@collab-ui/react';
 
 class Icon extends React.PureComponent {
   render() {
@@ -176,23 +176,25 @@ class Icon extends React.PureComponent {
     return (
       onClick
         ?
-        <Button
+        <button
           className={
-            'cui-button--icon' +
+            'cui-button' +
+            ' cui-button-36' +
+            ' cui-button--icon' +
             `${(type && ` cui-button--icon-${type}`) || ''}` +
             `${(buttonClassName && ` ${buttonClassName}`) || ''}`
           }
-          ariaLabel={getAriaLabel()}
-          ariaLabelledBy={
-            isAria // TODO(pajeter): remove isAria code with next major release
-              ? getAriaLabelledBy()
-              : deprecationWarning() // TODO(pajeter): remove isAria code with next major release
-          }
+          aria-label={getAriaLabel()}
+          // ariaLabelledBy={
+          //   isAria // TODO(pajeter): remove isAria code with next major release
+          //     ? getAriaLabelledBy()
+          //     : deprecationWarning() // TODO(pajeter): remove isAria code with next major release
+          // }
           onClick={onClick}
           {...otherProps}
         >
           {getIcon()}
-        </Button>
+        </button>
         :
         getIcon()
     );
