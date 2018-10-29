@@ -118,6 +118,28 @@ class Input extends React.Component {
     this.handleChange(e);
   };
 
+  // handleClearKeyDown = e => {
+  //   console.log('handleClearKeyDown');
+  //   const { handleClear, handleKeyDown } = this.context;
+  //   if (e.which === 32 || e.which === 13 ||
+  //       e.charCode === 32 || e.charCode === 13) {
+  //     handleClear && handleClear(e);
+  //     e.preventDefault();
+  //   } else {
+  //     handleKeyDown && handleKeyDown(e);
+  //   }
+  // };
+
+  handleClearKeyDown = e => {
+    if (e.which === 32 || e.which === 13 ||
+        e.charCode === 32 || e.charCode === 13) {
+      this.handleClear && this.handleClear(e);
+      e.preventDefault();
+    } else {
+      this.handleKeyDown && this.handleKeyDown(e);
+    }
+  };
+
   setInputRef = input => {
     const { clear, inputRef } = this.props;
     if (clear)  this.input = input;
@@ -133,6 +155,7 @@ class Input extends React.Component {
       disabled,
       errorArr,
       htmlId,
+      icon,
       id,
       inputClassName,
       inputHelpText,
@@ -182,16 +205,21 @@ class Input extends React.Component {
       <Icon
         name="clear-active_16"
         onClick={this.handleClear}
+        onKeyDown={this.handleClearKeyDown}
         ariaLabel={clearAriaLabel || 'clear input'}
       />
     );
+
+    const customInputIcon = (icon) ? React.cloneElement(icon, {
+      className: (icon.props.onClick ? '' : 'cui-input--icon')
+    }) : null;
 
     const iconContainer = () => {
       return (
         <div className='cui-input__icon-container'>
           {inputElement}
           {children}
-          {clearButton}
+          {customInputIcon || clearButton}
         </div>
       );
     };
@@ -223,7 +251,7 @@ class Input extends React.Component {
       );
 
     const getInputWrapper = () => {
-      if (clear || children) return iconContainer();
+      if (clear || icon || children) return iconContainer();
       if (secondaryLabel) return secondaryLabelWrapper();
       return inputElement;
     };
@@ -310,6 +338,8 @@ Input.propTypes = {
   errorArr: PropTypes.array,
   /** Unique HTML ID. Used for tying label to HTML input. Handy hook for automated testing. */
   htmlId: PropTypes.string,
+  /** Optional Icon node to override the default clear icon | null */
+  icon: PropTypes.node,
   /** Unique HTML ID. Used for tying label to HTML input. */
   id: PropTypes.string,
   /** Div Input ClassName */

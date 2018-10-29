@@ -56,8 +56,8 @@ describe('tests for <DatePickerCalendar />', () => {
     expect(calendar.find('DatePickerMonth')).toHaveLength(1);
 
     expect(calendar.find('.cui-datepicker__navigation--current-month').text()).toEqual('April 2018');
-    expect(calendar.find('.cui-button.cui-button--icon').at(1).props().disabled).toEqual(false);
-    expect(calendar.find('.cui-button.cui-button--icon').at(0).props().disabled).toEqual(false);
+    expect(calendar.find('.cui-button--icon').at(1).props().disabled).toEqual(false);
+    expect(calendar.find('.cui-button--icon').at(0).props().disabled).toEqual(false);
     expect(calendar.find('.cui-button.cui-datepicker__day--selected').text()).toEqual("1");
     expect(calendar.find('.cui-button.cui-datepicker__day--focus').text()).toEqual("1");
   });
@@ -80,9 +80,9 @@ describe('tests for <DatePickerCalendar />', () => {
       <DatePickerCalendar monthFormat={monthFormat} />,
       { context:{ selected: day } }
     );
-    calendar.find('.cui-button.cui-button--icon').at(1).simulate('click');
+    calendar.find('.cui-button--icon').at(1).simulate('click');
     expect(calendar.find('.cui-datepicker__navigation--current-month').text()).toEqual('May 2018');
-    calendar.find('.cui-button.cui-button--icon').at(0).simulate('click');
+    calendar.find('.cui-button--icon').at(0).simulate('click');
     expect(calendar.find('.cui-datepicker__navigation--current-month').text()).toEqual('April 2018');
   });
 

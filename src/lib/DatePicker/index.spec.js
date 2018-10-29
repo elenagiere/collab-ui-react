@@ -134,13 +134,13 @@ describe('tests for <DatePicker />', () => {
     );
     container.find('.trigger').simulate('click');
     //next month
-    container.find('.cui-button.cui-button--icon').at(1)
+    container.find('.cui-button--icon').at(1)
       .simulate('click');
     expect(changedDate).toEqual(day.clone().add(1, 'month').toDate());
     expect(onMonthChangeFn).toHaveBeenCalledTimes(1);
 
     //prev month
-    container.find('.cui-button.cui-button--icon').at(0)
+    container.find('.cui-button--icon').at(0)
       .simulate('click');
     expect(changedDate).toEqual(day.toDate());
     expect(onMonthChangeFn).toHaveBeenCalledTimes(2);

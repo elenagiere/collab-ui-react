@@ -26,6 +26,7 @@ class Icon extends React.PureComponent {
       description,
       isAria, // TODO(pajeter): remove isAria code with next major release
       onClick,
+      onKeyDown,
       name,
       size,
       title,
@@ -178,7 +179,6 @@ class Icon extends React.PureComponent {
         ?
         <button
           className={
-            'cui-button' +
             ' cui-button-36' +
             ' cui-button--icon' +
             `${(type && ` cui-button--icon-${type}`) || ''}` +
@@ -186,6 +186,7 @@ class Icon extends React.PureComponent {
           }
           aria-label={getAriaLabel()}
           onClick={onClick}
+          onKeyDown={onKeyDown}
           {...otherProps}
         >
           {getIcon()}
@@ -205,6 +206,8 @@ Icon.propTypes = {
   isAria: PropTypes.bool, // TODO(pajeter): remove isAria code with next major release
   name: PropTypes.string.isRequired,
   onClick: PropTypes.func,
+  /** Handler invoked when user presses a key on the keyboard | null */
+  onKeyDown: PropTypes.func,
   size: PropTypes.number,
   title: PropTypes.string,
   type: PropTypes.oneOf(['', 'white'])
@@ -218,6 +221,7 @@ Icon.defaultProps = {
   description: '',
   isAria: true, // TODO(pajeter): remove isAria code with next major release
   onClick: null,
+  onKeyDown: null,
   size: null,
   title: '',
   type: ''

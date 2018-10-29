@@ -13,7 +13,7 @@ describe('Tests for <Icon />', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should wrap in button', () => {
+  it('should wrap in html button element', () => {
     const props = {
       name: 'accessibility_16',
       onClick: ()=>{},
@@ -21,7 +21,7 @@ describe('Tests for <Icon />', () => {
     };
 
     const container = mount(<Icon {...props} />);
-    expect(container.find('.cui-button').exists()).toEqual(true);
+    expect(container.find('button').exists()).toEqual(true);
     expect(container.find('.cui-button--icon').exists()).toEqual(true);
   });
 
