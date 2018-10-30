@@ -8,19 +8,6 @@ import PropTypes from 'prop-types';
  */
 
 class Breadcrumbs extends React.PureComponent {
-  static displayName = 'Breadcrumbs';
-
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string
-  };
-
-  static defaultProps = {
-    /** @prop Children nodes to render inside Breadcrumbs | null */
-    children: null,
-    /** @prop Optional css class string | '' */
-    className: ''
-  };
 
   render() {
     const { className, children } = this.props;
@@ -36,6 +23,20 @@ class Breadcrumbs extends React.PureComponent {
     return <ul className={'cui-breadcrumbs' + ` ${className}`}>{items}</ul>;
   }
 }
+
+Breadcrumbs.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string
+};
+
+Breadcrumbs.defaultProps = {
+  /** @prop Children nodes to render inside Breadcrumbs | null */
+  children: null,
+  /** @prop Optional css class string | '' */
+  className: ''
+};
+
+Breadcrumbs.displayName = 'Breadcrumbs';
 
 export default Breadcrumbs;
 
